@@ -56,7 +56,6 @@ function menu() {
   }
   alert("Finalizamos...");
 }
-
 function crear(arrayProd) {
   let id = Number(prompt("Ingrese el Id de su producto"));
   let nombre = prompt("Ingrese el nombre de su producto");
@@ -67,50 +66,8 @@ function crear(arrayProd) {
   return arrayProd;
 }
 
-function listar(arrayProd) {
-  if (arrayProd.length == 0) {
-    alert("No hay productos para mostrar");
-  } else {
-    alert("Por consola verá su lista");
-    for (const producto of arrayProd) {
-      console.log(
-        `Producto:${producto.nombre} \n id:${producto.id} \n precio:${producto.precio}`
-      );
-    }
-  }
-}
-function borrar(arrayProd) {
-  let idBorrar = Number(
-    prompt("Ingrese el id del producto que desea ELIMINAR")
-  );
-  while (isNaN(idBorrar)) {
-    idBorrar = Number(prompt("El Id debe ser un numero, gracias"));
-  }
-  for (let i = 0; i < arrayProd.length; i++) {
-    if (arrayProd[i].id === idBorrar) {
-      arrayProd.splice(i, 1);
-      alert(`Su producto de id = ${idBorrar} a sido eliminado con éxito`);
-    }
-  }
-  return arrayProd;
-}
+function listar() {}
 
-function modificar(arrayProd) {
-  let idModificador = Number(
-    prompt("Ingrese el id del producto que desea MODIFICAR su precio")
-  );
-  while (isNaN(idModificador)) {
-    idModificador = Number(prompt("El Id debe ser un numero, gracias"));
-  }
-  for (const producto of arrayProd) {
-    if (producto.id === idModificador) {
-      let newPrecio = Number(prompt("Ingrese el precio nuevo. Solo numeros"));
-      producto.precio = newPrecio;
-      alert(
-        `Su producto de id = ${idModificador} a cambiado el precio con éxito!`
-      );
-    }
-  }
-  return arrayProd;
-}
-menu();
+function borrar() {}
+
+function modificar() {}
