@@ -79,7 +79,7 @@ function borrar(arrayProd) {
   let idBorrar = Number(
     prompt("Ingrese el id del producto que desea ELIMINAR")
   );
-  if (isNaN(idBorrar)) {
+  while (isNaN(idBorrar)) {
     idBorrar = Number(prompt("El Id debe ser un numero, gracias"));
   }
   for (let i = 0; i < arrayProd.length; i++) {
@@ -91,5 +91,22 @@ function borrar(arrayProd) {
   return arrayProd;
 }
 
-function modificar() {}
+function modificar(arrayProd) {
+  let idModificador = Number(
+    prompt("Ingrese el id del producto que desea MODIFICAR su precio")
+  );
+  while (isNaN(idModificador)) {
+    idModificador = Number(prompt("El Id debe ser un numero, gracias"));
+  }
+  for (let i = 0; i < arrayProd.length; i++) {
+    if (arrayProd[i].id === idModificador) {
+      let newPrecio = Number(prompt("Ingrese el precio nuevo. Solo numeros"));
+      arrayProd[i].precio = newPrecio;
+      alert(
+        `Su producto de id = ${idModificador} a cambiado el precio con éxito!`
+      );
+    }
+  }
+  return arrayProd;
+}
 menu();
